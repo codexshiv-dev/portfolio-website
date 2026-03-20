@@ -1,0 +1,28 @@
+<svg width="260" height="70" viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dot -->
+  <circle cx="18" cy="35" r="2.5" fill="#0ef" filter="url(#glow)">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Text -->
+  <text x="30" y="42"
+        font-family="Poppins, monospace"
+        font-size="20"
+        fill="#0ef"
+        letter-spacing="1"
+        filter="url(#glow)">
+    &lt;shiv.dev/&gt;
+  </text>
+
+</svg>

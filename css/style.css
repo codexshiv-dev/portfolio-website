@@ -167,7 +167,7 @@ section {
 .hero-box h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 1rem;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
 .hero-tag {
   display: inline-flex;
@@ -194,6 +194,7 @@ section {
 
 .hero-desc {
   font-size: 1.3rem;
+  margin-top: 5px;
   margin-bottom: 2rem;
 }
 
@@ -392,14 +393,21 @@ section {
   white-space: nowrap;
   animation: typing 3s steps(18, end), blink 0.7s infinite;
 }
+#typing-role {
+  /* display: inline-block; */
+  min-width: 220px; /* adjust based on longest text */
+  white-space: nowrap;
+}
 .hero-role {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  
+  font-size: 1.3rem;
   color: var(--main-color);
+   /* min-height: 28px; FIX jump height */
   border-right: 2px solid var(--main-color);
   display: inline-block;
   padding-right: 5px;
 }
+/* cursor */
 
 /* typing */
 @keyframes typing {
@@ -434,7 +442,8 @@ section {
 /* HERO TITLE */
 .hero-title {
   margin: 1.5rem 0;
-  line-height: 1.4;
+  line-height: 1.3;
+ 
 }
 
 /* Big clean text */
