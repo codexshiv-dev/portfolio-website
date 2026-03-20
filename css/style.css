@@ -13,6 +13,11 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -40,29 +45,59 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
+  height: 70px;
   padding: 0 6%;
-  background: var(--bg-color);
+  background-color: rgba(31, 36, 45, 0.7);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
-  backdrop-filter: blur(10px);
+  z-index: 1000;
+  /* border-bottom: 1px solid rgba(255,255,255,0.05); */
+}
+.header.shadow {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .logo {
-  font-size: 1.8rem;
+   font-size: 2rem;
   font-weight: 600;
+  color: var(--main-color);
 }
 
 .navbar a {
   margin-left: 2rem;
-  font-size: 1.4rem;
-  color: var(--text-color);
+  font-size: 1.3rem;
+   color: var(--text-color);
+  position: relative;
+   display: inline-block;
+  transition: 0.3s;
+}
+/* underline animation */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+ transition: 0.3s;
+  transform: translateX(-50%);
+}
+.navbar a.active {
+  color: var(--main-color);
+}
+.navbar a {
+  transition: 0.3s ease;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+.navbar a:hover {
   color: var(--main-color);
 }
 
@@ -76,6 +111,9 @@ body {
   font-size: 2.6rem;
   display: none;
 }
+a{
+  text-decoration: none;
+}
 
 #theme-toggle {
   font-size: 2.2rem;
@@ -85,7 +123,8 @@ body {
 /* Sections */
 section {
   min-height: 100vh;
-  padding: 9rem 6% 3rem;
+  
+  padding: 6rem 6% 3rem;
 }
 
 /* Hero */
@@ -95,16 +134,41 @@ section {
   align-items: center;
   text-align: center;
   position: relative;
+  padding-top: 5rem;
+  
 }
 
-.hero-box {
+/* .hero-box {
   max-width: 720px;
   padding: 3rem;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(16px);
+  box-shadow: 0 0 40px rgba(0, 238, 255, 0.1);
+} */
+ .hero-box {
+  max-width: 720px;
+  padding: 3rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);
+   animation: borderGlow 2s infinite alternate;
+}
+@keyframes borderGlow {
+  from {
+    box-shadow: 0 0 10px var(--main-color);
+  }
+  to {
+    box-shadow: 0 0 25px var(--main-color);
+  }
 }
 
+.hero-box h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 .hero-tag {
   display: inline-flex;
   padding: 0.4rem 1rem;
@@ -143,15 +207,25 @@ section {
 .btn {
   padding: 1rem 2.4rem;
   border-radius: 40px;
+  box-shadow: 0 4px 0 #0aa;
   background: var(--main-color);
   color: var(--bg-color);
   font-weight: 600;
+   transition: 0.3s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--main-color);
 }
 
 .btn.outline {
   background: transparent;
   border: 2px solid var(--main-color);
   color: var(--main-color);
+}
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #0aa;
 }
 
 /* About */
@@ -178,13 +252,15 @@ section {
 .skills {
   background: var(--second-bg-color);
   text-align: center;
+  padding-top: 4rem;
+ 
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .skill-card {
@@ -212,10 +288,16 @@ section {
 }
 
 .project-card {
-  background: var(--second-bg-color);
+  background: rgba(255,255,255,0.05);
   padding: 2rem;
   border-radius: 18px;
   text-align: left;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+.project-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid var(--main-color);
 }
 
 .project-card h3 {
@@ -304,6 +386,37 @@ section {
   margin-bottom: 1rem;
 }
 
+.typing-text {
+  overflow: hidden;
+  border-right: 3px solid var(--main-color);
+  white-space: nowrap;
+  animation: typing 3s steps(18, end), blink 0.7s infinite;
+}
+.hero-role {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--main-color);
+  border-right: 2px solid var(--main-color);
+  display: inline-block;
+  padding-right: 5px;
+}
+
+/* typing */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* cursor */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+/* cursor blink */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .contact-container {
@@ -317,6 +430,44 @@ section {
   .contact-socials a {
     justify-content: center;
   }
+}
+/* HERO TITLE */
+.hero-title {
+  margin: 1.5rem 0;
+  line-height: 1.4;
+}
+
+/* Big clean text */
+.hero-hi {
+  font-size: 3.2rem;
+  font-weight: 600;
+  display: block;
+}
+
+/* Pixel name */
+.hero-name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.3rem;
+  color: var(--main-color);
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Typing effect */
+.typing-text {
+  overflow: hidden;
+  border-right: 3px solid var(--main-color);
+  white-space: nowrap;
+  animation: typing 3s steps(18, end), blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
 }
 
 

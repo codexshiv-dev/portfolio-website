@@ -9,15 +9,18 @@
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet" />
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
     <!-- Header -->
     <header class="header">
-      <a href="#" class="logo">Portfolio</a>
+      <a href="#" class="logo">CodexShiv\.dev</a>
 
       <nav class="navbar">
         <a href="#home" class="active">Home</a>
@@ -35,11 +38,15 @@
 
     <!-- Hero -->
     <section class="home" id="home">
-      <div class="hero-box">
+      <div class="hero-box" data-aos="zoom-in">
         <span class="hero-tag">Web Developer • Cloud Enthusiast</span>
-
-        <h1>Hi, I'm <span class="gradient-text">Shivnath Gupta</span></h1>
-
+        <h1 class="hero-title">
+          <span class="hero-hi">Hi, I'm</span>
+          <span class="hero-name typing-text">Shivnath Gupta</span>
+          <p class="hero-role">
+            <span id="typing-role"></span>
+          </p>
+        </h1>
         <p class="hero-desc">
           I build modern, responsive websites and explore cloud & DevOps
           technologies with a focus on clean UI.
@@ -58,16 +65,17 @@
 
     <!-- About -->
     <section class="about" id="about">
-      <div class="about-img">
+      <div class="about-img" data-aos="fade-right">
         <img src="images/profile.png" alt="About Image" />
       </div>
 
-      <div class="about-content">
+      <div class="about-content" data-aos="fade-left">
         <h2 class="heading">About <span>Me</span></h2>
         <p>
-          I am a B.Tech (CSE) student passionate about web development, cloud
-          computing, and DevOps. I enjoy building clean, scalable, and
-          user-friendly digital products.
+          I am a B.Tech (CSE) student focused on frontend development and
+          building real-world web applications. I enjoy creating clean,
+          responsive user interfaces and continuously improving my skills in
+          JavaScript and full-stack development.
         </p>
       </div>
     </section>
@@ -77,7 +85,7 @@
       <h2 class="heading">My <span>Skills</span></h2>
 
       <div class="skills-grid">
-        <div class="skill-card">
+        <div class="skill-card" data-aos="fade-up">
           <i class="bx bxl-html5"></i>
           <h3>HTML</h3>
         </div>
@@ -104,10 +112,29 @@
       <h2 class="heading">My <span>Projects</span></h2>
 
       <div class="project-grid">
-        <div class="project-card">
-          <h3>Portfolio Website</h3>
+        <!-- UniMart -->
+        <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
+          <h3>UniMart Ecommerce</h3>
           <p>
-            Personal responsive portfolio built using HTML, CSS, and JavaScript.
+            A responsive ecommerce website featuring product listings, category
+            filtering, and modern UI design. Backend integration in progress.
+          </p>
+          <div class="project-links">
+            <a
+              href="https://codexshiv-dev.github.io/unimart-ecommerce/"
+              target="_blank"
+              >Live</a
+            >
+            <a href="#" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Kanban -->
+        <div class="project-card" data-aos="zoom-in-up">
+          <h3>Kanban Todo App</h3>
+          <p>
+            Drag-and-drop task management app with Todo, In Progress, and
+            Completed columns.
           </p>
           <div class="project-links">
             <a href="#" target="_blank">Live</a>
@@ -115,20 +142,15 @@
           </div>
         </div>
 
-        <div class="project-card">
-          <h3>Landing Page</h3>
-          <p>Clean landing page with modern UI and mobile-first design.</p>
+        <!-- Portfolio -->
+        <div class="project-card" data-aos="zoom-in-up">
+          <h3>Portfolio Website</h3>
+          <p>
+            Personal portfolio website showcasing projects, skills, and contact
+            information.
+          </p>
           <div class="project-links">
-            <a href="#" target="_blank">Live</a>
-            <a href="#" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Cloud Basics App</h3>
-          <p>Simple project explaining cloud concepts with static content.</p>
-          <div class="project-links">
-            <a href="#" target="_blank">Live</a>
+            <a href="sng.com.np" target="_blank">Live</a>
             <a href="#" target="_blank">GitHub</a>
           </div>
         </div>
@@ -141,16 +163,18 @@
 
       <div class="contact-container">
         <!-- Left: Social -->
-        <div class="contact-info">
+        <div class="contact-info" data-aos="fade-right">
           <h3>Connect With Me</h3>
           <p>You can reach me directly on these platforms:</p>
 
           <div class="contact-socials">
-            <a href="#" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/shivnath-g-660b09253?"
+              target="_blank">
               <i class="bx bxl-linkedin"></i> LinkedIn
             </a>
 
-            <a href="#" target="_blank">
+            <a href="https://github.com/codexshiv-dev" target="_blank">
               <i class="bx bxl-github"></i> GitHub
             </a>
 
@@ -161,7 +185,7 @@
         </div>
 
         <!-- Right: Form -->
-        <form class="contact-form">
+        <form class="contact-form" data-aos="fade-left">
           <input type="text" placeholder="Your Name" required />
           <input type="email" placeholder="Your Email" required />
           <textarea rows="5" placeholder="Your Message" required></textarea>
@@ -175,6 +199,14 @@
       <p>© 2025 Shiv Portfolio. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
   </body>
 </html>
