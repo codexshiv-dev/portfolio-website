@@ -3,216 +3,232 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shiv Portfolio</title>
+    <title>Shivnath Gupta — CS Student &amp; Full-Stack Builder</title>
+    <meta
+      name="description"
+      content="Shivnath Gupta is a B.Tech CS student building real, deployed software — including UNiMART, a full-stack e-commerce app with REST APIs, auth and a database." />
+    <meta name="theme-color" content="#131210" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shivnath Gupta — CS Student & Full-Stack Builder" />
+    <meta
+      property="og:description"
+      content="Building real, deployed software while learning — see the projects, the progress log, and the CV." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://sng.com.np/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      href="assets/images/icons/favicon.svg"
-      type="image/svg+xml" />
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <!-- Boxicons -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Press+Start+2P&display=swap"
       rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet" />
-    <!-- CSS -->
+
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Applies saved/system theme before first paint — no flash of the wrong theme -->
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var wantsLight =
+          saved === "light" ||
+          (!saved && window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (wantsLight) document.documentElement.classList.add("light-init");
+      })();
+    </script>
   </head>
 
   <body>
-    <!-- Header -->
-    <header class="header">
-      <a href="#" class="logo"
-        ><img src="assets/images/icons/icon.svg" alt=""
-      /></a>
+    <div class="texture" aria-hidden="true"></div>
 
-      <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+    <!-- NAV -->
+    <div class="nav-shell">
+      <nav class="nav" aria-label="Primary">
+        <a href="#top" class="logo">SG<span class="dot">.</span></a>
+        <div class="nav-links" id="navLinks">
+          <a href="#work" data-nav>Work</a>
+          <a href="#log" data-nav>Log</a>
+          <a href="#problems" data-nav>Problems</a>
+          <a href="#learning" data-nav>Learning</a>
+          <a href="cv.html">CV</a>
+          <a href="#contact" data-nav>Contact</a>
+        </div>
+        <div class="nav-tools">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z" />
+            </svg>
+          </button>
+          <button class="icon-btn nav-menu-btn" id="menuBtn" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
       </nav>
+    </div>
 
-      <div class="nav-actions">
-        <i class="bx bx-menu" id="menu-icon"></i>
-        <i class="bx bx-moon" id="theme-toggle"></i>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#work" data-nav>Work</a>
+      <a href="#log" data-nav>Log</a>
+      <a href="#problems" data-nav>Problems</a>
+      <a href="#learning" data-nav>Learning</a>
+      <a href="cv.html">CV</a>
+      <a href="#contact" data-nav>Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="hero-pixel">BUILD_ / SOLVE_ / LEARN_</span>
+          <h1>I ship the things<br />I'm still learning.</h1>
+          <p class="hero-sub">
+            Second-year CS student who took an e-commerce app from a static
+            frontend to a working client&ndash;server system &mdash; REST APIs, auth, a
+            database, and a live checkout flow &mdash; built while learning each
+            piece.
+          </p>
+          <p class="hero-role mono"><span id="typingRole"></span><span class="cursor">_</span></p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-solid">View work</a>
+            <a href="cv.html" class="btn btn-line">View CV</a>
+            <a href="#contact" class="btn btn-line">Contact</a>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="hero-panel-row">
+            <span class="k">STATUS</span>
+            <span class="v">B.Tech CSE · Student</span>
+          </div>
+          <div class="hero-panel-row">
+            <span class="k">BASED IN</span>
+            <span class="v">Vadodara, Gujarat</span>
+          </div>
+          <div class="hero-panel-row">
+            <span class="k">TRAINING</span>
+            <span class="v">Marquee Training</span>
+          </div>
+          <div class="hero-panel-row">
+            <span class="k">FOCUS</span>
+            <span class="v">Java · DSA · Backend</span>
+          </div>
+          <div class="hero-panel-row">
+            <span class="k">AVAILABLE FOR</span>
+            <span class="v">Internships · Remote</span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <!-- Hero -->
-    <section class="home" id="home">
-      <div class="hero-box" data-aos="zoom-in">
-        <span class="hero-tag">Web Developer • Cloud Enthusiast</span>
-        <h1 class="hero-title">
-          <span class="hero-hi">Hi, I'm</span>
-          <span class="hero-name typing-text">Shivnath Gupta</span>
-        </h1>
-        <p class="hero-role">
-          <span id="typing-role"></span>
-        </p>
-        <p class="hero-desc">
-          I build modern, responsive websites and explore cloud & DevOps
-          technologies with a focus on clean UI.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#portfolio" class="btn">View Work</a>
-          <a href="#contact" class="btn outline">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="scroll-down">
-        <i class="bx bx-chevron-down"></i>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-      <div class="about-img" data-aos="fade-right">
-        <img src="images/profile.png" alt="About Image" />
-      </div>
-
-      <div class="about-content" data-aos="fade-left">
-        <h2 class="heading">About <span>Me</span></h2>
-        <p>
-          I am a B.Tech (CSE) student focused on frontend development and
-          building real-world web applications. I enjoy creating clean,
-          responsive user interfaces and continuously improving my skills in
-          JavaScript and full-stack development.
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="skills" id="skills">
-      <h2 class="heading">My <span>Skills</span></h2>
-
-      <div class="skills-grid">
-        <div class="skill-card" data-aos="fade-up">
-          <i class="bx bxl-html5"></i>
-          <h3>HTML</h3>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up">
-          <i class="bx bxl-css3"></i>
-          <h3>CSS</h3>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up">
-          <i class="bx bxl-javascript"></i>
-          <h3>JavaScript</h3>
-        </div>
-
-        <div class="skill-card" data-aos="fade-up">
-          <i class="bx bx-cloud"></i>
-          <h3>Cloud Basics</h3>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-      <h2 class="heading">My <span>Projects</span></h2>
-
-      <div class="project-grid">
-        <!-- UniMart -->
-        <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
-          <h3>UniMart Ecommerce</h3>
-          <p>
-            A responsive ecommerce website featuring product listings, category
-            filtering, and modern UI design. Backend integration in progress.
+    <!-- WORK -->
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker"><span class="n">01</span> / Selected work</span>
+            <h2>Real applications, not exercises</h2>
+          </div>
+          <p class="lede">
+            Live where possible, source always linked. Status is shown
+            honestly &mdash; nothing here is claimed as finished unless it is.
           </p>
-          <div class="project-links">
-            <a
-              href="https://codexshiv-dev.github.io/unimart-ecommerce/"
-              target="_blank"
-              >Live</a
-            >
-            <a href="#" target="_blank">GitHub</a>
-          </div>
         </div>
 
-        <!-- Kanban -->
-        <div class="project-card" data-aos="zoom-in-up">
-          <h3>Kanban Todo App</h3>
-          <p>
-            Drag-and-drop task management app with Todo, In Progress, and
-            Completed columns.
-          </p>
-          <div class="project-links">
-            <a href="#" target="_blank">Live</a>
-            <a href="#" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="project-card" data-aos="zoom-in-up">
-          <h3>Portfolio Website</h3>
-          <p>
-            Personal portfolio website showcasing projects, skills, and contact
-            information.
-          </p>
-          <div class="project-links">
-            <a href="sng.com.np" target="_blank">Live</a>
-            <a href="#" target="_blank">GitHub</a>
-          </div>
-        </div>
+        <div id="featuredProjects"></div>
+        <div class="projects-more" id="moreProjects"></div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-      <h2 class="heading">Get In <span>Touch</span></h2>
-
-      <div class="contact-container">
-        <!-- Left: Social -->
-        <div class="contact-info" data-aos="fade-right">
-          <h3>Connect With Me</h3>
-          <p>You can reach me directly on these platforms:</p>
-
-          <div class="contact-socials">
-            <a
-              href="https://www.linkedin.com/in/shivnath-g-660b09253?"
-              target="_blank">
-              <i class="bx bxl-linkedin"></i> LinkedIn
-            </a>
-
-            <a href="https://github.com/codexshiv-dev" target="_blank">
-              <i class="bx bxl-github"></i> GitHub
-            </a>
-
-            <a href="#" target="_blank">
-              <i class="bx bxl-whatsapp"></i> WhatsApp
-            </a>
+    <!-- PROGRESS LOG -->
+    <section id="log">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker"><span class="n">02</span> / Progress log</span>
+            <h2>What each stage actually covered</h2>
           </div>
+          <p class="lede">
+            A straight academic timeline, not a highlight reel &mdash; what was
+            studied and built, in order.
+          </p>
         </div>
-
-        <!-- Right: Form -->
-        <form class="contact-form" data-aos="fade-left">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea rows="5" placeholder="Your Message" required></textarea>
-          <button class="btn">Send Message</button>
-        </form>
+        <div class="log" id="progressLog"></div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2025 Shiv Portfolio. All Rights Reserved.</p>
+    <!-- PROBLEM SOLVING -->
+    <section id="problems">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker"><span class="n">03</span> / Problem solving</span>
+            <h2>DSA practice, in Java</h2>
+          </div>
+          <p class="lede">
+            No invented streaks or counts &mdash; just the platforms and topics
+            actually being worked through right now.
+          </p>
+        </div>
+        <div class="solve-grid" id="solveGrid"></div>
+      </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section id="learning">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker"><span class="n">04</span> / Currently</span>
+            <h2>What's actively in progress</h2>
+          </div>
+        </div>
+        <div class="learn-list" id="learnList"></div>
+      </div>
+    </section>
+
+    <!-- REMOTE -->
+    <section id="remote">
+      <div class="wrap reveal" id="remotePanelWrap"></div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <div class="wrap cv-cta reveal">
+        <div>
+          <h2>Want the full breakdown?</h2>
+          <p>Education, skills and project details in one clean, printable page.</p>
+        </div>
+        <a href="cv.html" class="btn btn-solid">Open CV →</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-kicker"><span class="n">05</span> / Contact</span>
+            <h2>Let's talk</h2>
+          </div>
+        </div>
+        <div class="contact-grid" id="contactGrid"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap footer-row">
+        <span class="footer-note">Built with curiosity. Still learning, still building.</span>
+        <div class="footer-links" id="footerLinks"></div>
+      </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <div class="copy-toast" id="copyToast">Email copied</div>
 
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-      });
-    </script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

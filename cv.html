@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV — Shivnath Gupta</title>
+    <meta name="description" content="CV of Shivnath Gupta — B.Tech CSE student, web &amp; backend development, UNiMART project." />
+    <meta name="theme-color" content="#131210" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cv.css" />
+
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var wantsLight =
+          saved === "light" ||
+          (!saved && window.matchMedia("(prefers-color-scheme: light)").matches);
+        if (wantsLight) document.documentElement.classList.add("light-init");
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="texture" aria-hidden="true"></div>
+
+    <div class="nav-shell no-print">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#top" class="logo">SG<span class="dot">.</span></a>
+        <div class="nav-links">
+          <a href="index.html#work">Work</a>
+          <a href="index.html#log">Log</a>
+          <a href="index.html#problems">Problems</a>
+          <a href="cv.html" class="active">CV</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="nav-tools">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme">
+            <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <main class="wrap cv-page">
+      <div class="cv-actions no-print">
+        <a href="index.html#top" class="btn btn-line">← Back to portfolio</a>
+        <button class="btn btn-solid" id="printBtn">Download as PDF</button>
+      </div>
+
+      <header class="cv-header">
+        <div>
+          <h1>Shivnath Gupta</h1>
+          <p class="cv-role">Computer Science Student — Software Development, Web Technologies</p>
+        </div>
+        <div class="cv-meta mono">
+          <span>Vadodara, Gujarat, India</span>
+          <a href="https://github.com/codexshiv-dev" target="_blank" rel="noopener">github.com/codexshiv-dev</a>
+          <a href="https://www.linkedin.com/in/shivnath-g-660b09253" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </header>
+
+      <section class="cv-section">
+        <h2>Profile</h2>
+        <p>
+          Computer Science student with a growing foundation across programming,
+          web development, databases and cloud technologies. Started with C and
+          web fundamentals, progressed through C++, JavaScript, backend
+          development and database integration, and is now building stronger
+          software-development skills through academic study and parallel
+          industry training.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Education</h2>
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Bachelor of Technology — Computer Science</h3>
+          </div>
+          <ul class="cv-list">
+            <li><strong>Semester 1</strong> — C Programming, HTML, CSS, Web Fundamentals</li>
+            <li><strong>Semester 2</strong> — C++, Object-Oriented Programming, AWS Cloud Fundamentals</li>
+            <li><strong>Semester 3</strong> — Java, Data Structures &amp; Algorithms, continued web development</li>
+            <li><strong>Current</strong> — Parallel industry training through Marquee Training, alongside academics</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Technical Skills</h2>
+        <div class="cv-skill-grid">
+          <div><h4>Programming</h4><p>C, C++, Java, JavaScript</p></div>
+          <div><h4>Web</h4><p>HTML5, CSS3, JavaScript, REST APIs</p></div>
+          <div><h4>Backend</h4><p>Node.js, Express.js</p></div>
+          <div><h4>Database</h4><p>MongoDB, Mongoose</p></div>
+          <div><h4>Deployment &amp; Cloud</h4><p>Vercel, Render, Cloudinary, AWS fundamentals</p></div>
+          <div><h4>Tools</h4><p>Git, GitHub, VS Code, Postman</p></div>
+        </div>
+        <p class="cv-concepts">
+          Core concepts: OOP, CRUD, Authentication &amp; Authorization, API Integration,
+          Database Operations, HTTP Status Codes, Data Structures &amp; Algorithms.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Project</h2>
+        <div class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>UNiMART — E-Commerce Web Application</h3>
+            <span class="mono cv-stack-line">HTML · CSS · JS · Node.js · Express.js · MongoDB · Mongoose · Cloudinary · Vercel · Render</span>
+          </div>
+          <p>
+            A continuously developed e-commerce application built while
+            progressing from frontend fundamentals into backend and database
+            development.
+          </p>
+          <ul class="cv-list">
+            <li>Developed REST APIs for products, authentication, cart, checkout, orders and admin operations</li>
+            <li>Integrated MongoDB with Mongoose for storing and managing application data</li>
+            <li>Implemented product management including stock quantity, SKU, status, tags, ratings and reviews</li>
+            <li>Built cart and checkout workflows with product validation, stock availability and order creation</li>
+            <li>Added authentication and protected administrative operations using token-based authorization</li>
+            <li>Integrated Cloudinary for product image storage and management</li>
+            <li>Deployed the frontend through Vercel and backend services through Render</li>
+            <li>Debugged issues across API requests, authentication, database queries, ObjectId validation, routing, stock handling, checkout validation and frontend–backend communication</li>
+          </ul>
+          <div class="cv-links mono">
+            <a href="https://codexshiv-dev.github.io/unimart-ecommerce/" target="_blank" rel="noopener">Live →</a>
+            <a href="https://github.com/codexshiv-dev" target="_blank" rel="noopener">GitHub →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Data Structures &amp; Algorithms</h2>
+        <p>Currently developing problem-solving skills using Java, with practice focused on:</p>
+        <div class="cv-skill-grid cv-tags">
+          <span class="tag">Arrays</span>
+          <span class="tag">Binary Search</span>
+          <span class="tag">Linked Lists</span>
+          <span class="tag">Stacks</span>
+          <span class="tag">Search-space reduction</span>
+          <span class="tag">Time &amp; space complexity</span>
+          <span class="tag">Object-Oriented Programming</span>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Development Approach</h2>
+        <ul class="cv-list">
+          <li>Learn concepts by implementing them in working projects</li>
+          <li>Debug and investigate problems rather than relying only on theory</li>
+          <li>Gradually extend projects as new technologies and concepts are learned</li>
+          <li>Maintain projects using Git and GitHub, and work with deployed environments</li>
+        </ul>
+      </section>
+
+      <footer class="cv-footer mono no-print">
+        <span>Last updated September 2026</span>
+      </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        if (root.classList.contains("light-init")) {
+          root.classList.remove("light-init");
+          document.body.classList.add("light");
+        }
+        var btn = document.getElementById("themeToggle");
+        var icon = document.getElementById("themeIcon");
+        var sunPath = "M12 4V2M12 22v-2M4.9 4.9 3.5 3.5M20.5 20.5l-1.4-1.4M4.9 19.1l-1.4 1.4M20.5 3.5l-1.4 1.4M22 12h-2M4 12H2M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z";
+        var moonPath = "M21 12.5A8.5 8.5 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z";
+        function paint() {
+          var light = document.body.classList.contains("light");
+          icon.innerHTML = '<path d="' + (light ? sunPath : moonPath) + '"/>';
+        }
+        paint();
+        btn.addEventListener("click", function () {
+          document.body.classList.toggle("light");
+          localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+          paint();
+        });
+        document.getElementById("printBtn").addEventListener("click", function () {
+          window.print();
+        });
+      })();
+    </script>
+  </body>
+</html>
