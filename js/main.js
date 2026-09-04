@@ -13,6 +13,8 @@ const ICONS = {
   code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18-6-6 6-6M15 6l6 6-6 6"/></svg>',
   leetcode:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 3 12l9 9M21 12H9"/></svg>',
+  copy:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>',
 };
 
 const D = PORTFOLIO_DATA;
@@ -202,6 +204,16 @@ function renderRemote() {
 function renderContact() {
   const el = $("#contactGrid");
   const cards = [];
+
+  if (D.links.email) {
+    cards.push(`
+      <div class="contact-card">
+        <a class="contact-card-hit" href="mailto:${D.links.email}" aria-label="Email ${D.links.email}"></a>
+        <span class="icon-circle">${ICONS.mail}</span>
+        <span class="contact-card-text"><span class="label">EMAIL</span><br><span class="value">${D.links.email}</span></span>
+        <button class="copy-btn" id="emailCopyBtn" type="button" aria-label="Copy email address to clipboard">${ICONS.copy}</button>
+      </div>`);
+  }
   cards.push(`
     <a class="contact-card" href="${D.links.github}" target="_blank" rel="noopener">
       <span class="icon-circle">${ICONS.github}</span>
@@ -212,18 +224,14 @@ function renderContact() {
       <span class="icon-circle">${ICONS.linkedin}</span>
       <span><span class="label">LINKEDIN</span><br><span class="value">Shivnath Gupta</span></span>
     </a>`);
-  if (D.links.email) {
-    cards.push(`
-      <button class="contact-card" id="emailCard" style="border:1px solid var(--line);background:var(--bg-1);cursor:pointer;font:inherit;text-align:left;width:100%;">
-        <span class="icon-circle">${ICONS.mail}</span>
-        <span><span class="label">EMAIL</span><br><span class="value">${D.links.email}</span></span>
-      </button>`);
-  }
+
   el.innerHTML = cards.join("");
 
-  const emailCard = $("#emailCard");
-  if (emailCard) {
-    emailCard.addEventListener("click", () => {
+  const copyBtn = $("#emailCopyBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       navigator.clipboard.writeText(D.links.email).then(() => {
         const toast = $("#copyToast");
         toast.classList.add("show");

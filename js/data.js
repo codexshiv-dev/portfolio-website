@@ -33,7 +33,7 @@ const PORTFOLIO_DATA = {
   links: {
     github: "https://github.com/codexshiv-dev",
     linkedin: "https://www.linkedin.com/in/shivnath-g-660b09253",
-    email: "", // add your real email — button hides until this is set
+    email: "codexshiv.dev@gmail.com",
     leetcode: "", // add your LeetCode profile URL
     gfg: "", // add your GeeksforGeeks profile URL
     cvPdf: "", // add a hosted CV PDF URL if you have one; otherwise the
